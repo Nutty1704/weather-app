@@ -1,6 +1,7 @@
 import { useTheme } from '@/context/theme-provider'
 import { CloudMoon, Sun, Moon } from 'lucide-react';
 import { Link } from 'react-router-dom'
+import CitySearch from './city-search';
 
 const header = () => {
     const { theme, setTheme } = useTheme();
@@ -16,9 +17,9 @@ const header = () => {
                   style={{ fontFamily: "Fugaz One" }}
                 >Cast</p>
             </Link>
-            <div>
-                {/* Seach */}
-                {/* theme toggle */}
+            <div className='flex gap-4'>
+                <CitySearch />
+
                 <div onClick={()=>setTheme(isDark ? 'light' : 'dark')}
                     className={`flex items-center cursor-pointer transition-transform duration-500 ${isDark ? 'rotate-180': 'rotate-0'}`}>
                     {isDark
